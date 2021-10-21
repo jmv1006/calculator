@@ -20,7 +20,7 @@ body {
   height: 420px;
   padding: 18px;
   background-color:darkgray;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .display {
@@ -28,16 +28,29 @@ body {
   height: 100px;
   background-color: lightgray;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
 }
 
+.inputarea {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+.answer {
+  display: flex;
+  padding: 5px;
+}
 .buttons {
   width: 250px;
   height: 300px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
 }
 
 .digit {
@@ -46,7 +59,7 @@ body {
 }
 
 .operator {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 button {
