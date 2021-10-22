@@ -23,7 +23,7 @@ body {
   border: 2px solid black;
 }
 
-.display {
+#display {
   width: 250px;
   height: 100px;
   background-color: lightgray;
@@ -34,7 +34,7 @@ body {
 
 }
 
-.inputarea {
+#inputarea {
   display: flex;
   justify-content: flex-end;
   padding: 5px;
