@@ -38,6 +38,7 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 5px;
+  font-size: 25px;
 }
 .answer {
   display: flex;
