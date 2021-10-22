@@ -1,7 +1,7 @@
 
 const buttons = document.querySelectorAll("button");
 const display = document.getElementById('display');
-
+let displayValue;
 
 buttons.forEach(button => {
   button.addEventListener('click', function () {
@@ -13,7 +13,7 @@ buttons.forEach(button => {
 
 
 function displayInputArea(num) {
-  let displayValue = num;
+  displayValue = num;
   document.getElementById('inputarea').innerHTML = displayValue;
 }
 
