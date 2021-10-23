@@ -5,8 +5,15 @@ let displayValue;
 
 buttons.forEach(button => {
   button.addEventListener('click', function () {
-    const numb = Number(button.innerHTML);
-    displayInputArea(numb);
+    if (this.className == 'digit') {
+      const numb = Number(button.innerHTML);
+      displayInputArea(numb);
+    }
+    else {
+      const operator = (button.innerHTML);
+      displayInputArea(operator);
+      //will need to call a function that stores chosen operator
+    }
   })
 });
 
