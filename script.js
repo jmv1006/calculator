@@ -54,9 +54,13 @@ function clear() {
   document.getElementById('inputarea').innerHTML = '';
 }
 
+/*
 function operate(a, b) {
   console.log(getOperatorChoice[op](displayValue1, displayvalue2));
 }
 
 operate();
+*/
+
+
 
