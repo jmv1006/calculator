@@ -1,8 +1,9 @@
 
 const buttons = document.querySelectorAll("button");
-const display = document.getElementById('display');
-let displayValue1;
-let displayvalue2;
+const display = document.getElementById('inputarea');
+let displayValue;
+let keyValue;
+
 let getOperatorChoice = {
   '+': function (a, b) { return a + b },
   '<': function (a, b) { return a < b },
@@ -14,25 +15,20 @@ let op;
 
 buttons.forEach(button => {
   button.addEventListener('click', function () {
-    if (this.className == 'digit') {
-      let numb = Number(button.innerHTML);
-      displayInputArea(numb);
-    }
-    else if (this.id == 'clear') {
+    const keyValue = button.innerHTML;
+    const displayValue = display.textContent;
+
+    if (button.innerText == 'Clear') {
       clear();
     }
-    else {
-      const operatorSet = (button.innerHTML);
-      displayInputArea(operatorSet);
-      //will need to call a function that stores chosen operator ^
+    else if (displayValue == 0) {
+      display.textContent = keyValue
+    } else {
+      display.textContent = displayValue + keyValue;
     }
-  })
-});
 
-function displayInputArea(num) {
-  displayValue1 = num;
-  document.getElementById('inputarea').innerHTML = displayValue1;
-}
+  });
+});
 
 function add(a, b) {
   console.log(a + b)
