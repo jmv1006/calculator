@@ -1,55 +1,30 @@
 
-const buttons = document.querySelectorAll("button");
+const digitButtons = document.querySelectorAll("[data-number]");
+const operatorButtons = document.querySelectorAll("[data-operator]");
+const equalButton = document.getElementById('equal');
+const clearButton = document.getElementById('clear');
 const display = document.getElementById('inputarea');
 
-let num1;
-let num2;
-let ops;
 
-
-let getOperatorChoice = {
-  '+': function (a, b) { return a + b },
-  '<': function (a, b) { return a < b },
-  '*': function (a, b) { return a * b },
-  '/': function (a, b) { return a / b },
-};
-let op;
-//see line 57 to see how to use above functions
-
-buttons.forEach(button => {
+digitButtons.forEach(button => {
   button.addEventListener('click', function () {
-    displayValue = display.innerHTML;
-    keyValue = button.innerText;
-
-    if (button.innerText == 'Clear') {
-      clear();
-    } else if (displayValue == 0) {
-      num1 = display.textContent = keyValue;
-    } else {
-      num1 = display.textContent = displayValue + keyValue;
-    }
-
-    //operator stuff
-    switch (keyValue) {
-      case ('+'):
-        console.log('add');
-        break;
-      case ('-'):
-        console.log('subtract');
-        break;
-      case ('x'):
-        console.log('multiply');
-        break;
-      case ('/'):
-        console.log('divide');
-        break;
-      case ('='):
-        console.log('equal')
-        break;
-    }
-  });
+    console.log('clicked a number')
+  })
 });
 
+operatorButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    console.log('clicked an operator')
+  })
+});
+
+clearButton.addEventListener('click', function () {
+  console.log('clicked clear')
+});
+
+equalButton.addEventListener('click', function () {
+  console.log('clicked equal')
+});
 
 
 
@@ -74,13 +49,14 @@ function clear() {
   num1 = '';
 }
 
-/*
-function operate(a, b) {
-  console.log(getOperatorChoice[op](displayValue1, displayvalue2));
-}
-
-operate();
-*/
+let getOperatorChoice = {
+  '+': function (a, b) { return a + b },
+  '<': function (a, b) { return a < b },
+  '*': function (a, b) { return a * b },
+  '/': function (a, b) { return a / b },
+};
+let op;
+//see line 57 to see how to use above functions
 
 
 
