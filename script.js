@@ -1,8 +1,11 @@
 
 const buttons = document.querySelectorAll("button");
 const display = document.getElementById('inputarea');
-let displayValue;
-let keyValue;
+
+let num1;
+let num2;
+let ops;
+
 
 let getOperatorChoice = {
   '+': function (a, b) { return a + b },
@@ -15,20 +18,34 @@ let op;
 
 buttons.forEach(button => {
   button.addEventListener('click', function () {
-    const keyValue = button.innerHTML;
-    const displayValue = display.textContent;
+    displayValue = display.innerHTML;
+    keyValue = button.innerHTML;
 
     if (button.innerText == 'Clear') {
       clear();
     }
     else if (displayValue == 0) {
-      display.textContent = keyValue
+      num1 = display.textContent = keyValue;
     } else {
-      display.textContent = displayValue + keyValue;
+      num1 = display.textContent = displayValue + keyValue;
     }
-
+    //operator stuff
+    if (keyValue === '+') {
+      console.log('add');
+    } else if (keyValue === '-') {
+      console.log('subtract');
+    } else if (keyValue === 'x') {
+      console.log('multiply');
+    } else if (keyValue === '/') {
+      console.log('divide');
+    } else if (keyValue === '=') {
+      console.log('equal');
+    }
   });
 });
+
+
+
 
 function add(a, b) {
   console.log(a + b)
@@ -48,6 +65,7 @@ function divide(a, b) {
 
 function clear() {
   document.getElementById('inputarea').innerHTML = '';
+  num1 = '';
 }
 
 /*
