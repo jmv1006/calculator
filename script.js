@@ -19,27 +19,33 @@ let op;
 buttons.forEach(button => {
   button.addEventListener('click', function () {
     displayValue = display.innerHTML;
-    keyValue = button.innerHTML;
+    keyValue = button.innerText;
 
     if (button.innerText == 'Clear') {
       clear();
-    }
-    else if (displayValue == 0) {
+    } else if (displayValue == 0) {
       num1 = display.textContent = keyValue;
     } else {
       num1 = display.textContent = displayValue + keyValue;
     }
+
     //operator stuff
-    if (keyValue === '+') {
-      console.log('add');
-    } else if (keyValue === '-') {
-      console.log('subtract');
-    } else if (keyValue === 'x') {
-      console.log('multiply');
-    } else if (keyValue === '/') {
-      console.log('divide');
-    } else if (keyValue === '=') {
-      console.log('equal');
+    switch (keyValue) {
+      case ('+'):
+        console.log('add');
+        break;
+      case ('-'):
+        console.log('subtract');
+        break;
+      case ('x'):
+        console.log('multiply');
+        break;
+      case ('/'):
+        console.log('divide');
+        break;
+      case ('='):
+        console.log('equal')
+        break;
     }
   });
 });
