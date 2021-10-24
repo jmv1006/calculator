@@ -5,10 +5,22 @@ const equalButton = document.getElementById('equal');
 const clearButton = document.getElementById('clear');
 const display = document.getElementById('inputarea');
 
+let value1;
+let value2;
+let operator;
+let appendedValue;
 
 digitButtons.forEach(button => {
   button.addEventListener('click', function () {
     console.log('clicked a number')
+    value1 = button.innerHTML;
+
+    if (display.innerText === '0') {
+      display.innerText = value1;
+    } else {
+      appendValue();
+      sendToDisplay();
+    }
   })
 });
 
@@ -20,13 +32,21 @@ operatorButtons.forEach(button => {
 
 clearButton.addEventListener('click', function () {
   console.log('clicked clear')
+  clear();
+  appendedValue = '';
 });
 
 equalButton.addEventListener('click', function () {
   console.log('clicked equal')
 });
 
+function appendValue() {
+  appendedValue = display.innerText + value1;
+}
 
+function sendToDisplay() {
+  display.innerText = appendedValue;
+}
 
 function add(a, b) {
   console.log(a + b)
@@ -46,7 +66,7 @@ function divide(a, b) {
 
 function clear() {
   document.getElementById('inputarea').innerHTML = '';
-  num1 = '';
+  value1 = '';
 }
 
 let getOperatorChoice = {
