@@ -10,6 +10,7 @@ let value2;
 let operator;
 let appendedValue;
 let doneAppendedOne;
+let answer;
 
 digitButtons.forEach(button => {
   button.addEventListener('click', function () {
@@ -45,7 +46,7 @@ operatorButtons.forEach(button => {
         clear();
         break;
     }
-    //gettting value two
+    //saving a value two
     doneAppendedOne = appendedValue;
     console.log(doneAppendedOne);
   })
@@ -59,6 +60,8 @@ clearButton.addEventListener('click', function () {
 
 equalButton.addEventListener('click', function () {
   console.log('clicked equal')
+  clear();
+  getAnswer();
 });
 
 function appendValue() {
@@ -75,17 +78,42 @@ function operate(chosenOperator) {
   switch(chosenOperator) {
     case(add):
       console.log('you chose addition');
+      operator = 'add';
       break;
     case(subtract):
       console.log('you chose subtraction');
+      operator = 'subtract';
       break;
     case (multiply):
       console.log('you chose multiplication');
+      operator = 'multiply';
       break;
     case(divide):
       console.log('you chose division');
+      operator = 'divide';
       break;
   }
+}
+
+function getAnswer() {
+  if (operator === 'add') {
+    answer = (Number(doneAppendedOne) + Number(appendedValue))
+    sendToDisplayAnswer();
+  } else if (operator === 'subtract') {
+    answer = (Number(doneAppendedOne) - Number(appendedValue))
+    sendToDisplayAnswer();
+  } else if (operator === 'divide') {
+    answer = (Number(doneAppendedOne) / Number(appendedValue))
+    sendToDisplayAnswer();
+  } else if (operator === 'multiply') {
+    answer = (Number(doneAppendedOne) * Number(appendedValue))
+    sendToDisplayAnswer();
+    console.log('yes');
+  }
+}
+
+function sendToDisplayAnswer() {
+  display.innerText = answer
 }
 
 function add(a, b) {
