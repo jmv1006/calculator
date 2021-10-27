@@ -26,21 +26,25 @@ digitButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', function () {
-    console.log('clicked an operator')
     switch(button.id) {
       case('add'):
-        determineOperator(add);
+        operate(add);
+        clear();
         break;
       case('subtract'):
-        determineOperator(subtract);
+        operate(subtract);
+        clear();
         break;
       case('divide'):
-        determineOperator(divide);
+        operate(divide);
+        clear();
         break;
       case('multiply'):
-        determineOperator(multiply);
+        operate(multiply);
+        clear();
         break;
     }
+    //create a value 2 right here
   })
 });
 
@@ -62,8 +66,8 @@ function sendToDisplay() {
   display.innerText = appendedValue;
 }
 
-function determineOperator(type) {
-  switch(type) {
+function operate(chosenOperator) {
+  switch(chosenOperator) {
     case(add):
       console.log('you chose addition');
       break;
@@ -107,7 +111,7 @@ let getOperatorChoice = {
   '/': function (a, b) { return a / b },
 };
 let op;
-//see line 57 to see how to use above functions
+
 
 
 
