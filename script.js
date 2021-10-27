@@ -27,6 +27,20 @@ digitButtons.forEach(button => {
 operatorButtons.forEach(button => {
   button.addEventListener('click', function () {
     console.log('clicked an operator')
+    switch(button.id) {
+      case('add'):
+        determineOperator(add);
+        break;
+      case('subtract'):
+        determineOperator(subtract);
+        break;
+      case('divide'):
+        determineOperator(divide);
+        break;
+      case('multiply'):
+        determineOperator(multiply);
+        break;
+    }
   })
 });
 
@@ -46,6 +60,23 @@ function appendValue() {
 
 function sendToDisplay() {
   display.innerText = appendedValue;
+}
+
+function determineOperator(type) {
+  switch(type) {
+    case(add):
+      console.log('you chose addition');
+      break;
+    case(subtract):
+      console.log('you chose subtraction');
+      break;
+    case (multiply):
+      console.log('you chose multiplication');
+      break;
+    case(divide):
+      console.log('you chose division');
+      break;
+  }
 }
 
 function add(a, b) {
