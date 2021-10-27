@@ -9,6 +9,7 @@ let value1;
 let value2;
 let operator;
 let appendedValue;
+let doneAppendedOne;
 
 digitButtons.forEach(button => {
   button.addEventListener('click', function () {
@@ -44,7 +45,9 @@ operatorButtons.forEach(button => {
         clear();
         break;
     }
-    //create a value 2 right here
+    //gettting value two
+    doneAppendedOne = appendedValue;
+    console.log(doneAppendedOne);
   })
 });
 
@@ -62,9 +65,11 @@ function appendValue() {
   appendedValue = display.innerText + value1;
 }
 
+
 function sendToDisplay() {
   display.innerText = appendedValue;
 }
+
 
 function operate(chosenOperator) {
   switch(chosenOperator) {
