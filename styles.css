@@ -44,9 +44,10 @@ body {
   padding: 5px;
   font-size: 25px;
 }
-.answer {
+#answer {
   display: flex;
-  padding: 5px;
+  justify-content: flex-start;
+  padding: 10px;
   font-size: 25px;
 }
 .buttons {
