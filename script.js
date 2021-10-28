@@ -4,6 +4,7 @@ const operatorButtons = document.querySelectorAll("[data-operator]");
 const equalButton = document.getElementById('equal');
 const clearButton = document.getElementById('clear');
 const display = document.getElementById('inputarea');
+const answerArea = document.getElementById('answer');
 
 let value1;
 let value2;
@@ -112,39 +113,12 @@ function getAnswer() {
   }
 }
 
-function sendToDisplayAnswer() {
-  display.innerText = answer
-}
-
-function add(a, b) {
-  console.log(a + b)
-}
-
-function subtract(a, b) {
-  console.log(a - b);
-}
-
-function multiply(a, b) {
-  console.log(a * b);
-}
-
-function divide(a, b) {
-  console.log(a / b);
-}
-
 function clear() {
   document.getElementById('inputarea').innerHTML = '';
+  answerArea.innerHTML = '';
   value1 = '';
 }
 
-let getOperatorChoice = {
-  '+': function (a, b) { return a + b },
-  '<': function (a, b) { return a < b },
-  '*': function (a, b) { return a * b },
-  '/': function (a, b) { return a / b },
-};
-let op;
-
-
-
-
+function sendToDisplayAnswer() {
+  answerArea.innerText = answer;
+}
